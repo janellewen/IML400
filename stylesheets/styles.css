@@ -54,12 +54,26 @@
        url('../fonts/Noto-Sans-700italic/Noto-Sans-700italic.svg#NotoSans') format('svg');
 }
 
+@font-face {
+    font-family: 'biko';
+    font-style: normal;
+    src: url('../fonts/Biko_Regular.otf'); 
+}
+
+@font-face {
+    font-family: 'biko';
+    font-style: bold;
+    src: url('../fonts/Biko_Bold.otf'); 
+}
+
+
+
 body {
   background-color: #F0FFFF;
   padding:50px;
-  font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 14px/1.5 "Biko", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color:#727272;
-  font-weight:400;
+  font-weight:200;
 }
 
 h1, h2, h3, h4, h5, h6 {
