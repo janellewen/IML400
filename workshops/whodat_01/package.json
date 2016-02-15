@@ -1,0 +1,25 @@
+{
+  "name": "whodat",
+  "version": "1.0.0",
+  "description": "Workshop Who Dat for IML400;",
+  "main": "index.js",
+  "scripts": {
+    "start": "browser-sync start --files \"public/*.html,public/css/*.css,public/html/*.html,public/scripts/*.js\" --server \"public\" "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bytezen/IML400.git"
+  },
+  "keywords": [
+    "javascript"
+  ],
+  "author": "bytezen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bytezen/IML400/issues"
+  },
+  "homepage": "https://github.com/bytezen/IML400/tree/master/workshops/whodat",
+  "devDependencies": {
+    "browser-sync": "^2.11.1"
+  }
+}
