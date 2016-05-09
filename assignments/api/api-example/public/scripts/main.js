@@ -8,10 +8,13 @@ console.log("...flickr api...");
 // http://rhymebrain.com/talk?function=getRhymes&word=hello
 
 var RHYMEBRAIN_URL = "https://api.flickr.com/services/rest/";
-var my_api_key = "0d15d5f01dbc7857a2b1dd8b9309ab70"
+var my_api_key = "0bcb7d7128b3d8b626c554c3cd75fad2"
 var result = null;
 
 var msg_results = "<p class='msg'>the results will be placed here</p>";
+
+/* 0d15d5f01dbc7857a2b1dd8b9309ab70 
+
 /**
  button handlers
 
@@ -38,6 +41,8 @@ function onSubmit() {
     // jQuery getJSON function.
     // See below for the explanation
     var myRequest = formatQuery(query);
+
+    
 
 
     //submit the request to the service
@@ -119,7 +124,7 @@ function formatQuery(  ) {
  * an argument
  */
 function onJSONSuccess( returnedData ) {
-    var i, obj, count = 20; // some variables that we will use in our loop of the results
+    var i, obj, count = 5; // some variables that we will use in our loop of the results
     
     var photoData = returnedData.photos.photo;
     var numOfPhotos = photoData.length;
@@ -131,7 +136,7 @@ function onJSONSuccess( returnedData ) {
     // be the number of data elements
     // this makes sure that we don't go over the number of results
     // that were returned
-    if( returnedData.length < 20 ) {
+    if( returnedData.length < 5 ) {
         count = returnedData.length;
     }
     
