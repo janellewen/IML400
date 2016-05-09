@@ -4,19 +4,80 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>IML400 by Janelle Wen</title>
-
     <script type="text/javascript" src="javascripts/script.js"></script>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+<script type="text/javascript" src='javascripts/colorstrip.js'></script>
+
+
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/github-light.css">
     <meta name="viewport" content="width=device-width">
+
+<script type="text/javascript" src="javascripts/paper-full.js"></script>
+ <script type="text/paperscript" canvas="canvas" data-paper-ignore="true">
+        // Adapted from the following Processing example:
+        // http://processing.org/learning/topics/follow3.html
+
+        // The amount of points in the path:
+        var points = 25;
+
+        // The distance between the points:
+        var length = 35;
+
+        var path = new Path({
+            strokeColor: '#E4141B',
+            strokeWidth: 20,
+            strokeCap: 'round'
+        });
+
+        var start = view.center / [10, 1];
+        for (var i = 0; i < points; i++)
+            path.add(start + new Point(i * length, 0));
+
+        function onMouseMove(event) {
+            path.firstSegment.point = event.point;
+            for (var i = 0; i < points - 1; i++) {
+                var segment = path.segments[i];
+                var nextSegment = segment.next;
+                var vector = segment.point - nextSegment.point;
+                vector.length = length;
+                nextSegment.point = segment.point - vector;
+            }
+            path.smooth();
+        }
+
+        function onMouseDown(event) {
+            path.fullySelected = true;
+            path.strokeColor = '#e08285';
+        }
+
+        function onMouseUp(event) {
+            path.fullySelected = false;
+            path.strokeColor = '#e4141b';
+        }
+    </script>
+
+
+
+
+
+</div>
+
+
+
+
 
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
   </head>
-  
-  <body>
+
+  <body background="img/background-04.png">
     <div class="wrapper">
+      
+
       <header>
         <h1><a href="index.html">JANELLE WEN</a></h1>
         <p></p>
@@ -35,6 +96,27 @@
             <p>Welcome to Janelle's IML 400 website. Click the links above to check out the things I've been working on!
         
 
+
+
+
+
+
+
+<style type="text/css">
+    #colorstrip {
+        overflow: hidden;
+        position: relative;
+        height: 10px;
+        width: 100%
+    }
+</style>
+
+<div id="colorstrip"></div>
+
+
+
+
+
       </section>
       <footer>
         <p><small>by <a href="https://github.com/janellewen">yours truly</small></a></p>
@@ -42,6 +124,25 @@
       </footer>
     </div>
 
-    
+
   </body>
+
+<script type="text/javascript">
+    jQuery(document).ready(
+        function($) {
+            $('#colorstrip').colorstrip(
+                {
+                    minInterval: 3000,
+                    maxInterval: 12000,
+                    minWidth: 10,
+                    maxWidth: 80,
+                    opacity: 0.5,
+                    colors: ['#f90', '#39c', '#c00', '#090', '#ffff00', '#007', '#69f']
+                }
+            );
+        }
+    );      
+</script>
+
+
 </html>

@@ -67,6 +67,20 @@
 }
 
 
+html,
+body {
+    margin: 0;
+    overflow: hidden;
+    height: 100%;
+}
+
+/* Scale canvas with resize attribute to full size */
+canvas[resize] {
+    width: 100%;
+    height: 100%;
+}
+
+
 
 body {
   background-color: #F0FFFF;
@@ -74,7 +88,10 @@ body {
   font: 14px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
   color:#727272;
   font-weight:200;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
+
 
 h1, h2, h3, h4, h5, h6 {
   color:#222;
