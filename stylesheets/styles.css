@@ -70,7 +70,6 @@
 html,
 body {
     margin: 0;
-    overflow: hidden;
     height: 100%;
 }
 
@@ -92,6 +91,9 @@ body {
   background-attachment: fixed;
 }
 
+#content {
+overflow: scroll;
+}
 
 h1, h2, h3, h4, h5, h6 {
   color:#222;
