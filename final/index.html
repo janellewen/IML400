@@ -1,35 +1,24 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8" />
-	<title>jInvertScroll Demo Page</title>
-    <link rel="stylesheet" href="css/example.css" />
-</head>
-<body>
-    <h1>HarmoNYCS</h1>
-    
-    <div class="horizon scroll">
-        <img src="images/horizon.png" alt=""/>
-    </div>
-    <div class="middle scroll">
-        <img src="images/middle.png" alt=""/>
-    </div>
-    <div class="front scroll">
-        <img src="images/front.png" alt=""/>
-    </div>
-    
-    <script type="text/javascript" src="libs/jquery.min.js"></script>
-    <script type="text/javascript" src="dist/js/jquery.jInvertScroll.js"></script>
-    <script type="text/javascript">
-    (function($) {
-        $.jInvertScroll(['.scroll'],        // an array containing the selector(s) for the elements you want to animate
-            {
-            height: 6000,                   // optional: define the height the user can scroll, otherwise the overall length will be taken as scrollable height
-            onScroll: function(percent) {   //optional: callback function that will be called when the user scrolls down, useful for animating other things on the page
-                console.log(percent);
-            }
-        });
-    }(jQuery));
-    </script>
-</body>
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>HARMONYCS</title>
+		<meta name="og:title" content="Music Lounge" />
+		<meta name="description" content="Music Lounge is an interactive demo that showcase WebGL audio positioning within a minimalistic UI based on babylon.js" />
+		<meta name="keywords" content="Graphics, webgl, webaudio, pointer events" />
+		<meta name="author" content="deltakosh, meulta, davrous" />
+		<link rel="stylesheet" type="text/css" href="https://edgeportal.blob.core.windows.net/media/demotemplate.css" />
+		<link href="styles/demo.css" rel="stylesheet" />
+	</head>
+	<body>
+		<canvas id="renderCanvas"></canvas>
+		<script src="scripts/hand.minified-1.2.js"></script>
+		<script src="scripts/babylon.2.1-beta.js"></script>
+		<script src="scripts/musicLounge.soundsLoader.js"></script>
+		<script src="scripts/musiclounge.soundCube.js"></script>
+		<script src="scripts/musicLoung.asgardRing.js"></script>
+		<script src="scripts/musicLounge.globalEqualizer.js"></script>
+		<script src="scripts/musiclounge.main.js"></script>
+		<script src="scripts/index.js"></script>
+	</body>
+
 </html>
