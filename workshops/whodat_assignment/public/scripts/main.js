@@ -29,13 +29,18 @@ console.log( "/*****************/\n" + NAME +"'s submission \nfor Whodat Assignm
 console.log('...challenge 1...');
 
 //paste your code here...and delete
-console.log('\tnot completed')
+function colorStyle( elem, car) { 
+console.log('..styling color of elem = ' + elem);
+var myNewColorString = "background-color:" + car + ";";
+elem.setAttribute("style",myNewColorString);
+}
 
-var myResult = document.getElementsByClassName('wing_L');
-myResult[0].setAttribute( 'style', 'background-color: purple');
-var myResultRight = document.getElementsByClassName('wing_R');
-myResultRight[0].setAttribute( 'style', 'background-color: deeppink');
+wing_R = document.getElementsByClassName( "wing_R" )[0]
+colorStyle( wing_R, "pink")
 
+wing_L = document.getElementsByClassName( "wing_L" )[0]
+colorStyle( wing_L, "pink")
+console.log('\tcompleted')
 
 /* -=-=-=-			=-=-=-=-=			-=-=-= 	*/
 /*  Ch2											*/	
@@ -43,11 +48,12 @@ myResultRight[0].setAttribute( 'style', 'background-color: deeppink');
 /*	on the 1st row at the end					*/	
 /* -=-=-=-			=-=-=-=-=			-=-=-= 	*/
 console.log('...challenge 2...');
-console.log('\tnot completed')
-//paste your code here...
 
-var daCage = document.getElementsByClassName('cage')
-daCage[2].setAttribute('style', 'background-color: pink')
+cage_3 = document.getElementsByClassName("cage column-4")[2]
+
+colorStyle( cage_3, "orange")
+
+console.log('\tcompleted')
 
 
 /* -=-=-=-			=-=-=-=-=			-=-=-= 	*/
@@ -67,13 +73,19 @@ daCage[2].setAttribute('style', 'background-color: pink')
 // border-top: 120px solid goldenrod;
 // would double the length of the beak.
 /** ---		----	---	 **/
-
 console.log('...challenge 3...');
-console.log('\tnot completed')
+console.log('\tattempted')
 //paste your code here...
+function changeLength( elem, pixel) { 
+console.log('..styling beakLength of elem = ' + elem);
+var myNewBeakLength = "border-top:" + pixel + ";";
+elem.setAttribute("style",myNewBeakLength);
+}
 
+beak_6 = document.getElementsByClassName("beak")[5]
 
-document.querySelector("#container > div:nth-child(2) > div:nth-child(3) > section.beak").setAttribute("style","border-top: 100px solid magenta")
+changeLength( beak_6, "250px solid black")
+
 
 
 /* -=-=-=-			=-=-=-=-=			-=-=-= 	*/
@@ -88,26 +100,17 @@ document.querySelector("#container > div:nth-child(2) > div:nth-child(3) > secti
 /*												*/					
 /*				html Tag for the first cage     */					
 /* -=-=-=-			=-=-=-=-=			-=-=-= 	*/
+
 console.log('...challenge 4...');
-console.log('\tnot completed')
+console.log('\tcompleted')
 function getCage(cageNumber) {
-	// Uncomment and fill in the code below
 
-	// Hint: 
-	// First get the cages
-	// Second, get the cage that corresponds to the cageNumber
-	// that was passed in
-	// Third, return that cage
+	var selectedCage = document.getElementsByClassName("cage")[cageNumber]
 
-	// var selectedCage = 
-
-function getCage(cageNumber) {
-	var res = document.getElementsByClassName('cage')
-[sNumber];
-return res;
+	return selectedCage;
 }
 
-console.log("this is a test of my fun")
+
 
 /* -=-=-=-			=-=-=-=-=			-=-=-= 	*/
 /*  Ch5											*/	
@@ -121,12 +124,24 @@ console.log("this is a test of my fun")
 /*	assist you 									*/
 /* -=-=-=-			=-=-=-=-=			-=-=-= 	*/
 console.log('...challenge 5...');
-console.log('\tnot completed')
+console.log('\tcompleted')
+
+
+
 //paste your code here...
+function getCage(cageNumber) {
+	var selectedCage = document.getElementsByClassName("cage")[cageNumber]
+	return selectedCage;
+}
+colorStyle(getCage("1"), "blue")
+colorStyle(getCage("4"), "blue")
 
-
-
-
+function getBody(BodyNumber) {
+	var selectedBody = document.getElementsByClassName("body prpl-d4")[BodyNumber]
+	return selectedBody;
+}
+colorStyle(getBody("1"), "pink")
+colorStyle(getBody("4"), "yellow")
 
 
 /* -=-=-=-			=-=-=-=-=			-=-=-= 	*/
@@ -139,27 +154,21 @@ console.log('\tnot completed')
 /*												*/	
 /* -=-=-=-			=-=-=-=-=			-=-=-= 	*/
 console.log('...challenge 6...');
-console.log('\tnot completed')
+console.log('\tcompleted')
 //paste your code here...
 
 function getWings(anOwl) {
-	return wings;
+	var wing1 = document.getElementsByClassName("wing_L")[anOwl]
+	var wing2 = document.getElementsByClassName("wing_R")[anOwl]
+	return [wing1, wing2];
 }
 
-function getBeak(anOwl) {
-	return wings;
-}
-
-function getEyes(anOwl) {
-	return eyes;
-}
-
-function getBody(anOwl) {
-	return body;
-}
 
 function getPupils(anOwl) {
-
+	var pupil1 = document.getElementsByClassName("pupil")[anOwl*2]
+	var pupil2 = document.getElementsByClassName("pupil")[anOwl*2+1]
+	return [pupil1, pupil2];
 }
+
 
 
